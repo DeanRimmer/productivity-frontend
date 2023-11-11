@@ -1,0 +1,623 @@
+@import "fonts";
+@import "colours";
+
+* {
+  font-family: "DIN Next";
+}
+#root,
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+}
+.App {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+}
+.container {
+  display: grid;
+  background-color: $saggezza-grey-4;
+  grid-template-columns: 20rem 1fr;
+  height: calc(100% - 5rem);
+  padding-top: 5rem;
+}
+
+.navbar {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  position: fixed;
+  width: 100%;
+  height: 3rem;
+  z-index: 998;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 25%);
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBarLogo {
+  height: 6.3rem;
+  width: 14.099rem;
+  position: fixed;
+  z-index: 999;
+  margin-left: 1%;
+  background: url("../images/SaggezzaIFSColor.png");
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+}
+
+.newOrderButton {
+  position: relative;
+  grid-column-start: 4;
+  grid-column-end: 4;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 0.5rem 0.7rem;
+  display: inline-block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: solid;
+  text-decoration: none;
+  font-weight: 300;
+  color: white;
+  background-color: $saggezza-green;
+  text-align: center;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.newOrderButton:hover {
+  color: white;
+  background-color: $saggezza-dark-green;
+}
+
+.sidebar {
+  box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 25%);
+  width: 100%;
+  z-index: 1;
+  left: 0;
+  text-align: center;
+  background-color: $saggezza-grey-4;
+  overflow-x: hidden;
+  padding-top: 5rem;
+  padding-left: 0.2rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+.sidebar .profile {
+  padding-bottom: 3rem;
+}
+
+.profilePicture {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.collapsible {
+  text-align: left;
+}
+.collapsible a {
+  display: block;
+  text-align: left;
+}
+
+.collapsible .toggle {
+  color: #000000;
+  position: relative;
+  text-align: center;
+  border: unset;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.collapsible .toggle:hover {
+  background-color: underline;
+}
+
+.collapsible .filterParent {
+  height: 0rem;
+  overflow: hidden;
+  text-align: left;
+  transition: height ease 0.3s;
+}
+
+.collapsible .filterParentOpen {
+  height: 100%;
+}
+
+.orderHeaderContainer:hover {
+  background-color: #eee;
+}
+
+.statusBadge span.DENIED {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-anchor: middle;
+
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: $saggezza-red !important;
+  color: white;
+}
+
+.statusBadge span.CANCELLED {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-anchor: middle;
+
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: $saggezza-red !important;
+  color: white;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0% !important;
+  padding-left: 0% !important;
+  position: relative;
+  text-anchor: middle;
+  margin-top: 3%;
+  margin-bottom: 1%;
+  border-radius: 10px;
+  width: 55%;
+  text-align: center;
+  background: $saggezza-green;
+  color: black;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.orderHeaderContainer .material-icons-outlined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtersHeading {
+  text-align: left;
+}
+
+.productFilters {
+  text-align: left;
+}
+.orderStatusFilter {
+  text-align: left;
+}
+.alignLeft {
+  text-align: left;
+}
+.alignRight {
+  text-align: right;
+}
+
+.orderDetailsPage {
+  background-color: $saggezza-grey-4;
+  padding-top: 5rem;
+}
+
+.orderList {
+  padding: 2rem;
+  background-color: $saggezza-grey-4;
+}
+
+.orderList .orderHeaderContainer {
+  height: 3rem;
+}
+
+.orderHeaderContainer div {
+  padding-top: 6%;
+  padding-left: 5%;
+}
+
+.orderHeaderContainer {
+  display: grid;
+  width: 2rem;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  grid-template-areas: "header header header header";
+  width: 100%;
+  box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 25%);
+  text-align: center;
+  background-color: white;
+}
+.orderDetailsContainer {
+  display: grid;
+  width: 10%;
+  height: 100vh;
+  left: 0;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 40%;
+  grid-template-areas:
+    "header header header"
+    "main  main  sidebar";
+  height: 100%;
+  width: 97%;
+  margin: 0;
+  box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 25%) !important;
+  border: #000000;
+  padding: 3% 0% 0% 3%;
+  background-color: white;
+}
+
+.orderDetailsFirstColumn div,
+.orderDetailsSecondColumn div,
+.orderDetailsThirdColumn div {
+  padding-bottom: 2%;
+  font-size: 12pt;
+}
+
+.orderDetailsContainer {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+.orderDetailsSecondColumn {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+.orderDetailsThirdColumn {
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: absolute;
+  top: 15vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  overflow: auto;
+}
+.confirmModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+}
+.productTable tr th div {
+  height: 8.9rem;
+  width: 7.78rem;
+  z-index: 999;
+  background-size: cover;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.messengerBagImage {
+  background: url("../images/Messenger Bag.png");
+}
+
+.messengerBagImage2 {
+  background: url("../images/Rucksack.png");
+}
+
+.keyboardImage {
+  background: url("../images/keyboard and mouse.png");
+}
+
+.headsetImage {
+  background: url("../images/headset.png");
+}
+
+.laptopImage {
+  background: url("../images/laptop.png");
+}
+
+.monitorImage {
+  background: url("../images/Monitor.png");
+}
+
+.productName {
+  margin-bottom: 2rem;
+}
+
+.header {
+  background: #90d003;
+  padding: 1rem;
+}
+
+.productContainer {
+  width: 100%;
+}
+
+.productTable {
+  width: 100%;
+}
+
+.header h2 {
+  margin: 0;
+  color: white;
+}
+
+.content {
+  max-height: clamp(25rem, 60vh, 75rem);
+  overflow: auto;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f1f1f1;
+}
+
+.addressCheckbox {
+  margin-top: 2rem;
+}
+
+.addressBox {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.addressInput {
+  margin-left: 1rem;
+  min-width: 10rem;
+  width: 25%;
+  font: 1em sans-serif;
+}
+
+.courierName,
+.trackingNo,
+.costInput {
+  margin-left: 1rem;
+  min-width: 10rem;
+  width: 25%;
+  font: 1em sans-serif;
+}
+
+.duplicateReasonInput {
+  margin-left: 1rem;
+  min-width: 10rem;
+  width: 25%;
+  font: 1em sans-serif;
+}
+
+.deniedReasonInput {
+  margin-left: 1rem;
+  min-width: 10rem;
+  width: 50%;
+  font: 1em sans-serif;
+}
+
+.deliveryInfoInputs label {
+  display: inline-block;
+  width: 9rem;
+}
+
+.modalButton {
+  position: relative;
+  grid-column-start: 4;
+  grid-column-end: 4;
+  padding: 0.5rem 0.7rem;
+  display: inline-block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 2px solid;
+  text-decoration: none;
+  font-weight: 300;
+  color: white;
+  background-color: $saggezza-green;
+  text-align: center;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.disclaimerContainer {
+  margin-top: 2rem;
+}
+
+.modalButton:hover {
+  color: white;
+  background-color: $saggezza-dark-green;
+}
+
+@media (min-width: 200rem) {
+  .modal {
+    left: calc(10%);
+  }
+}
+.orderDuplicateText {
+  color: $saggezza-red;
+}
+
+.progressBar {
+  display: flex;
+  user-select: none;
+  border-collapse: collapse;
+  margin: 0;
+}
+.progressBar .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.GREEN span.material-icons-outlined {
+  color: $saggezza-green;
+  font-size: 2.1rem !important;
+}
+.DARKGREEN span.material-icons-outlined {
+  color: $saggezza-dark-green;
+}
+.GREY span.material-icons-outlined {
+  color: $saggezza-grey-2;
+}
+.RED span.material-icons-outlined {
+  color: $saggezza-red;
+}
+
+.GREEN p {
+  font-size: x-small;
+  font-weight: bolder;
+}
+.DARKGREEN p {
+  font-size: x-small;
+}
+.GREY p {
+  font-size: x-small;
+}
+.RED p {
+  font-size: x-small;
+  font-weight: bolder;
+}
+
+p.bullet {
+  font-size: 12pt;
+  font-weight: 450;
+}
+
+.userList {
+  background-color: white;
+  margin: 2em;
+  padding: 1em;
+  box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+}
+
+.userItem {
+  display: grid;
+  width: 2rem;
+  grid-template-columns: 25% 25%;
+  grid-template-rows: auto;
+  grid-template-areas: "header header";
+  width: 100%;
+  box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 25%);
+  text-align: center;
+  background-color: white;
+}
+.userItem div {
+  padding-top: 2%;
+  padding-left: 5%;
+}
+.MuiSwitch-track {
+  background-color: $saggezza-green !important;
+}
+.MuiSwitch-colorSecondary.Mui-checked {
+  color: $saggezza-green !important;
+}
+.addressInput {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+a {
+  text-decoration:none;
+}
+
+.admin-orders-container {
+  background-color: white;
+  margin: 2em;
+  padding: 1em;
+  box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+}
+
+.admin-orders-nav-form input {
+  margin: 1rem;
+}
+
+.admin-orders-table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-orders-table thead tr {
+  background-color: $saggezza-green;
+  color: white;
+  text-align: left;
+}
+
+.admin-orders-table th,
+.admin-orders-table td {
+  padding: 0.8rem 1.1rem;
+}
+
+.admin-orders-table tbody tr:nth-of-type(even) {
+  background-color: $saggezza-grey-4;
+}
+
+.admin-orders-table th.name, th.item {
+  width: 35%;
+}
+
+.admin-orders-table th.order-date, th.cost {
+  width: 15%;
+}
+
+.admin-download-orders-button,
+.admin-search-orders-button,
+.admin-reset-orders-button {
+  padding: 0.5rem 0.7rem;
+  border: solid;
+  font-weight: 300;
+  color: white;
+  background-color: $saggezza-green;
+  text-align: center;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.admin-download-orders-button:hover,
+.admin-search-orders-button:hover,
+.admin-reset-orders-button:hover {
+  color: white;
+  background-color: $saggezza-dark-green;
+}
+
+.admin-section-header {
+  margin-top: 0em;
+}
